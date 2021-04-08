@@ -1,0 +1,25 @@
+program DynTFTColorThemeGen;
+
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
+uses
+{$IFnDEF FPC}
+{$ELSE}
+  Interfaces,
+{$ENDIF}
+  Forms,
+  DynTFTColorThemeGenMainForm in 'DynTFTColorThemeGenMainForm.pas' {frmDynTFTSimMain},
+  DynTFTColorThemeGenScreenForm in 'DynTFTColorThemeGenScreenForm.pas' {frmDynTFTSimScreen},
+  DynTFTColorThemeGenSelForm in 'DynTFTColorThemeGenSelForm.pas' {frmDynTFTSimScreen};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfrmDynTFTColorThemeGenMain, frmDynTFTColorThemeGenMain);
+  Application.CreateForm(TfrmDynTFTColorThemeGenScreen, frmDynTFTColorThemeGenScreen);
+  Application.CreateForm(TfrmDynTFTColorThemeGenSel, frmDynTFTColorThemeGenSel);
+  Application.Run;
+end.
